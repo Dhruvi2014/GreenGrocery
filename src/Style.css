@@ -1,0 +1,240 @@
+TOPBAR
+.gg-topbar {
+  background: #f5f5f5;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.gg-top-links a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* HEADER */
+.gg-header {
+  padding: 20px 0;
+  background: #fff;
+}
+
+.gg-logo-icon {
+  font-size: 30px;
+  color: #6f42c1;
+  margin-right: 10px;
+}
+
+.gg-logo h5 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.gg-logo span {
+  font-size: 12px;
+  color: #999;
+}
+
+/* SEARCH */
+.gg-search-box {
+  display: flex;
+  width: 40%;
+}
+
+.gg-search-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-right: none;
+}
+
+.gg-search-box button {
+  background: #6f42c1;
+  border: none;
+  color: #fff;
+  padding: 0 20px;
+}
+
+/* ICONS */
+.gg-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.gg-icons div {
+  text-align: center;
+  font-size: 14px;
+}
+
+.gg-icons i {
+  display: block;
+  font-size: 18px;
+}
+
+/* NAVBAR */
+.gg-navbar {
+  background: #6f42c1;
+}
+
+.gg-navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.gg-category-btn {
+  background: #ffc107;
+  font-weight: 600;
+}
+
+.gg-category-menu {
+  width: 250px;
+}
+
+/* MEGA MENU */
+.gg-mega-menu {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.gg-mega-menu h6 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* CALL */
+.gg-call {
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .gg-search-box {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .gg-icons {
+    display: none;
+  }
+}
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  display: none;
+  min-width: 200px;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+.gg-product-menu {
+  min-width: 260px;
+}
+
+.gg-category-menu {
+  width: 280px;
+  border-radius: 10px;
+}
+
+.gg-category-menu .dropdown-item {
+  padding: 10px 15px;
+}
+
+.gg-category-menu .dropdown-item:hover {
+  background: #f8f9fa;
+}
+.gg-pages-menu {
+  min-width: 500px;
+}
+
+.gg-pages-menu .dropdown-item {
+  padding: 8px 15px;
+}
+
+
+.gg-right-info {
+  color: #fff;
+  gap: 30px;
+}
+
+.gg-small-text {
+  font-size: 12px;
+  display: block;
+  opacity: 0.8;
+}
+
+.gg-big-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+
+.gg-location a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.gg-location .dropdown-menu {
+  min-width: 180px;
+}
+
+.gg-discount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gg-discount i {
+  font-size: 18px;
+}
+
+.gg-call {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+
+  .gg-right-info {
+    display: none !important;
+  }
+
+  .gg-pages-menu {
+    min-width: 100%;
+  }
+}
+
+.gg-pages-dropdown {
+  min-width: 220px;
+  border-radius: 8px;
+}
+
+.gg-pages-dropdown .dropdown-item {
+  padding: 8px 15px;
+}
+
+.gg-pages-dropdown .dropdown-item:hover {
+  background: #f8f9fa;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  display: none;
+  min-width: 200px;
+  margin-top: -1px;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
