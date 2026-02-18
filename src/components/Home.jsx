@@ -8,6 +8,19 @@ import herohome1 from "../assets/herohome.png";
 import herohome2 from "../assets/herohome1.png";
 import herohome3 from "../assets/herohome2.png";
 
+import cat1 from "../assets/dairy.png";
+import cat2 from "../assets/bread.jpg";
+import cat3 from "../assets/candy.jpg";
+import cat4 from "../assets/coffee.png";
+import cat5 from "../assets/dairy.png";
+import cat6 from "../assets/groceries.png";
+import cat7 from "../assets/fruit.png";
+import cat8 from "../assets/chicken.png";
+
+import sidebar1 from "../assets/sidebar1.png";
+import sidebar2 from "../assets/sidebar2.png";
+
+
 export default function Home() {
 
     const slides = [
@@ -52,6 +65,28 @@ export default function Home() {
         return () => clearInterval(interval);
     }, [current]);
 
+    const categories = [
+        { img: cat1, name: "Bakery" },
+        { img: cat2, name: "Bread" },
+        { img: cat3, name: "Candy" },
+        { img: cat4, name: "Coffee" },
+        { img: cat5, name: "Dairy & Eggs" },
+        { img: cat6, name: "Fresh Produce" },
+        { img: cat7, name: "Frozen" },
+        { img: cat8, name: "Meat & Fish" },
+    ];
+
+    const [index, setIndex] = useState(0);
+    const total = categories.length;
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prev) => (prev + 1) % total);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <>
             <div className="gg-topbar">
@@ -95,7 +130,6 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* NAVBAR */}
             <nav className="navbar navbar-expand-lg gg-navbar">
                 <div className="container">
 
@@ -453,7 +487,7 @@ export default function Home() {
                         <div className="card p-3 sidebar">
                             <h5 className="mb-3">Categories</h5>
                             <ul className="list-unstyled category-list">
-                                <li><i className="fas fa-bread-slice me-2 text-warning"></i> Bakery</li>
+                                {/* <li><i className="fas fa-bread-slice me-2 text-warning"></i> Bakery</li>
                                 <li><i className="fas fa-wheat-awn me-2 text-success"></i> Bread</li>
                                 <li><i className="fas fa-candy-cane me-2 text-danger"></i> Candy</li>
                                 <li><i className="fas fa-mug-hot me-2 text-dark"></i> Coffee</li>
@@ -462,9 +496,128 @@ export default function Home() {
                                 <li><i className="fas fa-ice-cream me-2 text-info"></i> Frozen</li>
                                 <li><i className="fas fa-fish me-2 text-primary"></i> Meat & Fish</li>
                                 <li><i className="fas fa-carrot me-2 text-success"></i> Organic Foods</li>
-                                <li><i className="fas fa-cookie-bite me-2 text-warning"></i> Snacks</li>
+                                <li><i className="fas fa-cookie-bite me-2 text-warning"></i> Snacks</li> */}
+
+                                <li className="dropdown-submenu">
+                                    <a className="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                                        <span><i className="fas fa-bread-slice me-2 text-warning"></i> Bakery</span>
+                                        <i className="fas fa-chevron-right small"></i>
+                                    </a>
+
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item" href="#">Cakes</a></li>
+                                        <li><a className="dropdown-item" href="#">Cookies</a></li>
+                                        <li><a className="dropdown-item" href="#">Pastries</a></li>
+                                        <li><a className="dropdown-item" href="#">Brownies</a></li>
+                                    </ul>
+                                </li>
+
+                                <li className="dropdown-submenu">
+                                    <a className="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                                        <span><i className="fas fa-wheat-awn me-2 text-success"></i> Bread</span>
+                                        <i className="fas fa-chevron-right small"></i>
+                                    </a>
+
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item" href="#">Whole Wheat</a></li>
+                                        <li><a className="dropdown-item" href="#">Multigrain</a></li>
+                                        <li><a className="dropdown-item" href="#">Garlic Bread</a></li>
+                                    </ul>
+                                </li>
+
+                                <li className="dropdown-submenu">
+                                    <a className="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                                        <span><i className="fas fa-candy-cane me-2 text-danger"></i> Candy</span>
+                                        <i className="fas fa-chevron-right small"></i>
+                                    </a>
+
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item" href="#">Gum</a></li>
+                                        <li><a className="dropdown-item" href="#">Hard Candy</a></li>
+                                    </ul>
+                                </li>
+
+
+                                <li className="dropdown-submenu">
+                                    <a className="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                                        <span><i className="fas fa-mug-hot me-2 text-brown"></i> Coffee</span>
+                                        <i className="fas fa-chevron-right small"></i>
+                                    </a>
+
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item" href="#">Coffee Creamers</a></li>
+                                        <li><a className="dropdown-item" href="#">Coffee Pods</a></li>
+                                        <li><a className="dropdown-item" href="#">Cold Brew Coffee</a></li>
+                                        <li><a className="dropdown-item" href="#">Ground Coffee</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li className="dropdown-submenu">
+                                    <a className="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                                        <span><i className="fas fa-fish me-2 text-primary"></i> Dairy & Eggs</span>
+                                        <i className="fas fa-chevron-right small"></i>
+                                    </a>
+
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item" href="#">Cheese</a></li>
+                                        <li><a className="dropdown-item" href="#">Chocolates</a></li>
+                                        <li><a className="dropdown-item" href="#">Eggs</a></li>
+                                        <li><a className="dropdown-item" href="#">Milk</a></li>
+
+                                    </ul>
+                                </li>
+
+
+                                <li className="dropdown-submenu">
+                                    <a className="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                                        <span><i className="fa-solid fa-apple-whole me-2 text-danger"></i> Fresh Produce</span>
+                                        <i className="fas fa-chevron-right small"></i>
+                                    </a>
+
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item" href="#">Fresh Herbs</a></li>
+                                        <li><a className="dropdown-item" href="#">Fresh Vegetables</a></li>
+                                    </ul>
+                                </li>
+
+                                <li className="dropdown-submenu">
+                                    <a className="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                                        <span><i class="fa-solid fa-ice-cream me-2 text-primary"></i> Frozen</span>
+                                        <i className="fas fa-chevron-right small"></i>
+                                    </a>
+
+                                    <ul className="dropdown-menu">
+                                        <li><a className="dropdown-item" href="#">Frozen Breakfast</a></li>
+                                        <li><a className="dropdown-item" href="#">Frozen Produce</a></li>
+                                        <li><a className="dropdown-item" href="#">Frozen Snacks</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li><a className="dropdown-item" href="#"><i className="fas fa-fish me-2 text-primary"></i> Meat & Fish</a></li>
+
+                                <li><a className="dropdown-item" href="#"><i className="fa-solid fa-carrot text-success"></i>Orgnic Foods</a></li>
+
                             </ul>
                         </div>
+                        <div className="promo-card mt-5 mb-4">
+                            <img src={sidebar1} alt="Dairy Products" />
+                            <div className="promo-content">
+                                <h5>Dairy products</h5>
+                                <button className="btn btn-dark btn-sm rounded-pill">Order Now!</button>
+                            </div>
+                        </div>
+
+                        <div className="promo-card">
+                            <img src={sidebar2} alt="Hot Cookies" />
+                            <div className="promo-content">
+                                <h5>Hot cookies are ready!</h5>
+                                <button className="btn btn-dark btn-sm rounded-pill">Order Now!</button>
+                            </div>
+                        </div>
+
+
                     </div>
 
                     <div className="col-lg-9">
@@ -482,7 +635,6 @@ export default function Home() {
                                 <button className="btn btn-primary">Products →</button>
                             </div>
 
-                            {/* PREV BUTTON */}
                             <button className="hero-btn prev" onClick={prevSlide}>
                                 <i className="fas fa-chevron-left"></i>
                             </button>
@@ -496,27 +648,22 @@ export default function Home() {
                         <div className="mt-5">
                             <h4 className="mb-4">Shop by Categories</h4>
 
-                            <div className="category-row">
-
-                                {[
-                                    { icon: "fa-bread-slice", name: "Bakery" },
-                                    { icon: "fa-wheat-awn", name: "Bread" },
-                                    { icon: "fa-candy-cane", name: "Candy" },
-                                    { icon: "fa-mug-hot", name: "Coffee" },
-                                    { icon: "fa-egg", name: "Dairy & Eggs" },
-                                    { icon: "fa-apple-whole", name: "Fresh Produce" },
-                                    { icon: "fa-ice-cream", name: "Frozen" },
-                                    { icon: "fa-drumstick-bite", name: "Meat & Fish" },
-                                ].map((item, index) => (
-                                    <div className="category-box" key={index}>
-                                        <i className={`fas ${item.icon} fa-2x mb-3`}></i>
-                                        <h6>{item.name}</h6>
-                                    </div>
-                                ))}
-
+                            <div className="slider-wrapper">
+                                <div
+                                    className="slider-track"
+                                    style={{
+                                        transform: `translateX(-${index * 170}px)`
+                                    }}
+                                >
+                                    {categories.map((item, i) => (
+                                        <div className="category-card" key={i}>
+                                            <img src={item.img} alt={item.name} />
+                                            <h6>{item.name}</h6>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-
 
                     </div>
                 </div>
