@@ -284,6 +284,24 @@ export default function Home() {
         window.addEventListener("resize", handleResizeClose);
         return () => window.removeEventListener("resize", handleResizeClose);
     }, []);
+    const vfVisibleCount = 3;
+    const [vfCurrentIndex, setVfCurrentIndex] = useState(0);
+
+    const vfNextSlide = () => {
+        if (vfCurrentIndex < productsData.length - vfVisibleCount) {
+            setVfCurrentIndex(prev => prev + 1);
+        }
+    };
+
+    const vfPrevSlide = () => {
+        if (vfCurrentIndex > 0) {
+            setVfCurrentIndex(prev => prev - 1);
+        }
+    };
+
+
+
+
 
     return (
         <>
@@ -821,6 +839,70 @@ export default function Home() {
                             </div>
                         </div>
 
+                        <div className="vf-slider-wrapper mt-3">
+
+                            <div className="vf-slider-header">
+                                <h4>Featured</h4>
+
+                                <div className="vf-slider-controls">
+                                    <button
+                                        className="vf-prev-btn"
+                                        onClick={vfPrevSlide}
+                                        disabled={vfCurrentIndex === 0}
+                                    >
+                                        <i className="fas fa-chevron-left"></i>
+                                    </button>
+
+                                    <button
+                                        className="vf-next-btn"
+                                        onClick={vfNextSlide}
+                                        disabled={vfCurrentIndex >= productsData.length - vfVisibleCount}
+                                    >                                        <i className="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="vf-slider-viewport">
+                                <div
+                                    className="vf-slider-track"
+                                    style={{
+                                        transform: `translateY(-${vfCurrentIndex * 110}px)`
+                                    }}
+                                >
+                                    {productsData.map((item) => (
+                                        <div className="vf-product-card" key={item.id}>
+
+                                            <div className="vf-product-image">
+                                                <img src={item.img} alt={item.name} />
+
+                                                <div className="vf-hover-icons">
+                                                    <button><i className="fas fa-shopping-bag"></i></button>
+                                                    <button><i className="fas fa-eye"></i></button>
+                                                    <button><i className="far fa-heart"></i></button>
+                                                    <button onClick={() => addToCompare(item)}>
+                                                        <i className="fas fa-sync"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div className="vf-product-info">
+                                                <span className="vf-stock">IN STOCK</span>
+                                                <h6>{item.name}</h6>
+
+                                                <div className="vf-price">
+                                                    <span className="vf-old">${item.oldPrice}</span>
+                                                    <span className="vf-new">${item.price}</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                        </div>
+
+
 
                     </div>
 
@@ -975,10 +1057,28 @@ export default function Home() {
                             onClick={() => setIsCompareOpen(false)}
                         ></div>
 
+                        <div className="container mt-5">
+                            <div className="row g-4">
+                                <div className="col-12 col-md-6">
+                                    <div className="promo-card1 promo-purple">
+                                        <p className="promo-text">30% discount on promotional products!</p>
+                                    </div>
+                                </div>
+
+                                <div className="col-12 col-md-6">
+                                    <div className="promo-card1 promo-green">
+                                        <p className="promo-text">Extra 10% discount for members!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
+
+
                 </div>
-            </div >
+            </div>
         </>
     )
 }
