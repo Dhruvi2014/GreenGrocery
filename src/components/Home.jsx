@@ -7,7 +7,7 @@ import logo from "../assets/logo.png";
 import herohome1 from "../assets/herohome.png";
 import herohome2 from "../assets/herohome1.png";
 import herohome3 from "../assets/herohome2.png";
-
+import heroImage from "../assets/verticalbanner.png";
 import cat1 from "../assets/dairy.png";
 import cat2 from "../assets/bread.jpg";
 import cat3 from "../assets/candy.jpg";
@@ -34,6 +34,20 @@ import p11 from "../assets/product10.jpeg";
 import p12 from "../assets/product11.jpeg";
 
 import banner4 from "../assets/banner4.png"
+
+const featuredProducts = [
+    { id: 1, name: "Organic green fresh broccoli", price: "$3.25", old: "$4.00", img: p1 },
+    { id: 2, name: "Ultimate organic nut flour", price: "$2.25", old: "$3.45", img: p2 },
+    { id: 3, name: "Fresh green broccoli", price: "$3.25", old: "$4.00", img: p8 },
+    { id: 4, name: "Organic apple", price: "$2.10", old: "$3.00", img: p5 },
+    { id: 5, name: "Organic carrot", price: "$1.80", old: "$2.50", img: p10 },
+    { id: 6, name: "Fresh spinach", price: "$2.50", old: "$3.10", img: p4 },
+    { id: 7, name: "Organic tomato", price: "$2.75", old: "$3.40", img: p9 },
+];
+
+const onSaleProducts = [...featuredProducts];
+const bestsellerProducts = [...featuredProducts];
+
 export default function Home() {
 
     const slides = [
@@ -299,7 +313,59 @@ export default function Home() {
         }
     };
 
+        const featuredRef = useRef(null);
+        const saleRef = useRef(null);
+        const bestRef = useRef(null);
 
+        const scrollBlock = (ref, direction) => {
+    const scrollAmount = 125;
+
+    if (direction === "next") {
+        ref.current.scrollTop += scrollAmount;
+    } else {
+        ref.current.scrollTop -= scrollAmount;
+    }
+};
+
+        const ProductBlock = ({ title, products, blockRef, uniqueName }) => (
+            <div className="hps-block-wrapper">
+                <div className="hps-block-header">
+                    <h5>{title}</h5>
+                    <div>
+                        <button
+                            className={`hps-btn-prev-${uniqueName}`}
+                            onClick={() => scrollBlock(blockRef, "prev")}
+                        >
+                            &#10094;
+                        </button>
+                        <button
+                            className={`hps-btn-next-${uniqueName}`}
+                            onClick={() => scrollBlock(blockRef, "next")}
+                        >
+                            &#10095;
+                        </button>
+                    </div>
+                </div>
+
+                <div className="hps-product-scroll" ref={blockRef}>
+                    {products.map((item) => (
+                        <div className="hps-product-card" key={item.id}>
+                            <div className="hps-product-image">
+                                <img src={item.img} alt={item.name} />
+                            </div>
+                            <div className="hps-product-info">
+                                <p className="hps-stock-text">IN STOCK</p>
+                                <h6>{item.name}</h6>
+                                <div className="hps-price">
+                                    <span className="hps-old-price">{item.old}</span>
+                                    <span className="hps-new-price">{item.price}</span>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
 
     return (
         <>
@@ -941,11 +1007,9 @@ export default function Home() {
                             </div>
                         </div>
 
-
-
                     </div>
 
-                    <div className="col-lg-9">
+                    <div className="col-lg-9 col-md-8">
                         <div
                             className="hero-section position-relative"
                             style={{
@@ -1111,6 +1175,49 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
+
+                        <div className="row mt-5">
+
+                            <div className="col-lg-3 col-md-4 mb-4">
+                                <div className="hps-left-hero">
+                                    <img src={heroImage} alt="Groceries" />
+                                </div>
+                            </div>
+
+                            <div className="col-lg-3 col-md-6 mb-4">
+                                <ProductBlock
+                                    title="Featured"
+                                    products={featuredProducts}
+                                    blockRef={featuredRef}
+                                    uniqueName="featuredUnique"
+                                />
+                            </div>
+
+                            <div className="col-lg-3 col-md-6 mb-4">
+                                <ProductBlock
+                                    title="On Sale"
+                                    products={onSaleProducts}
+                                    blockRef={saleRef}
+                                    uniqueName="saleUnique"
+                                />
+                            </div>
+
+                            <div className="col-lg-3 col-md-12 mb-4">
+                                <ProductBlock
+                                    title="Bestseller"
+                                    products={bestsellerProducts}
+                                    blockRef={bestRef}
+                                    uniqueName="bestUnique"
+                                />
+                            </div>
+
+                        </div>
+
+
+
+
+
+
 
                     </div>
 

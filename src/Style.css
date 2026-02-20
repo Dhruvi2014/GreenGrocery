@@ -824,3 +824,131 @@ TOPBAR .gg-topbar {
     .testimonial-card { padding: 2rem !important; }
     .feature-label { font-size: 0.95rem; }
 }
+.hps-main-container {
+  padding: 40px 20px;
+  background: #f5f5f5;
+}
+
+.hps-left-hero img {
+  width: 100%;
+  height: 430px;
+  border-radius: 10px;
+}
+
+.hps-block-wrapper {
+  margin-bottom: 40px;
+}
+
+.hps-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.hps-block-header h5 {
+  font-weight: 600;
+}
+
+.hps-btn-prev-featuredUnique,
+.hps-btn-next-featuredUnique,
+.hps-btn-prev-saleUnique,
+.hps-btn-next-saleUnique,
+.hps-btn-prev-bestUnique,
+.hps-btn-next-bestUnique {
+  border: none;
+  background: #e0e0e0;
+  padding: 6px 12px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.hps-btn-prev-featuredUnique:hover,
+.hps-btn-next-featuredUnique:hover,
+.hps-btn-prev-saleUnique:hover,
+.hps-btn-next-saleUnique:hover,
+.hps-btn-prev-bestUnique:hover,
+.hps-btn-next-bestUnique:hover {
+  background: #28a745;
+  color: white;
+}
+
+.hps-product-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;      
+  height: 360px;         
+  scroll-behavior: smooth;
+}
+
+.hps-product-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.hps-product-card {
+  min-width: 220px;
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-shrink: 0;
+  height: 110px;
+}
+
+.hps-product-image img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.hps-product-info h6 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.hps-stock-text {
+  font-size: 11px;
+  color: green;
+  font-weight: 600;
+}
+
+.hps-price {
+  font-size: 14px;
+}
+
+.hps-old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 5px;
+}
+
+.hps-new-price {
+  color: #007bff;
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .hps-product-card {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hps-left-hero {
+    margin-bottom: 30px;
+  }
+  .hps-product-card {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hps-product-card {
+    min-width: 160px;
+  }
+}
