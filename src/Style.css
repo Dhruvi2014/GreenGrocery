@@ -1137,3 +1137,138 @@ TOPBAR .gg-topbar {
     width: 100%;
   }
 }
+/* REGISTER SECTION */
+.gf-register-section {
+  background: #f4f4f4;
+  padding: 40px 0;
+}
+
+.gf-register-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.gf-register-form {
+  max-width: 400px;
+}
+
+.gf-input {
+  border-radius: 50px 0 0 50px;
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+}
+
+.gf-submit-btn {
+  background: #c9c3f5;
+  border: none;
+  padding: 0 25px;
+  border-radius: 0 50px 50px 0;
+  font-weight: 500;
+}
+
+.gf-call-text {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #777;
+}
+
+.gf-call-number {
+  color: #7a74d1;
+  font-weight: 600;
+}
+
+/* FOOTER */
+.gf-footer-section {
+  background: #111;
+  color: #bbb;
+  padding: 60px 0 30px;
+}
+
+.gf-footer-heading {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.gf-footer-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.gf-social-icons i {
+  margin-right: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #222;
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.gf-social-icons i:hover {
+  background: #7a74d1;
+  color: #fff;
+}
+
+.gf-download-title {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.gf-app-images img {
+  height: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.gf-footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.gf-footer-list li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.gf-footer-list li:hover {
+  color: #fff;
+}
+
+/* Bottom */
+.gf-footer-bottom {
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  margin-top: 30px;
+}
+
+.gf-policy-links {
+  font-size: 13px;
+}
+
+.gf-bottom-icons i {
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.gf-payment-img img {
+  height: 35px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .gf-register-wrapper {
+    text-align: center;
+  }
+
+  .gf-register-form {
+    margin: auto;
+  }
+
+  .gf-footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}

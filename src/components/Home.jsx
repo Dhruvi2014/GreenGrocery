@@ -46,6 +46,10 @@ import store4 from "../assets/store4.jpg";
 import store5 from "../assets/store5.jpeg";
 import store6 from "../assets/store5.jpeg";
 
+import appstoreImg from "../assets/app-store.png";
+import playstoreImg from "../assets/google-play.png";
+import paymentImg from "../assets/footer1_img.png";
+
 const featuredProducts = [
     { id: 1, name: "Organic green fresh broccoli", price: "$3.25", old: "$4.00", img: p1 },
     { id: 2, name: "Ultimate organic nut flour", price: "$2.25", old: "$3.45", img: p2 },
@@ -1389,12 +1393,143 @@ export default function Home() {
                             </div>
                         </section>
 
-
-
                     </div>
 
                 </div>
             </div>
+
+            
+
+
+      <section className="gf-register-section">
+        <div className="container gf-register-wrapper">
+          <div className="row align-items-center">
+            
+            <div className="col-lg-6">
+              <h4 className="gf-register-title">
+                Get a surprise discount by registering!
+              </h4>
+
+              <div className="gf-register-form d-flex">
+                <input
+                  type="email"
+                  placeholder="Your E-mail"
+                  className="form-control gf-input"
+                />
+                <button className="gf-submit-btn">Submit</button>
+              </div>
+            </div>
+
+            <div className="col-lg-6 text-lg-end mt-4 mt-lg-0">
+              <p className="gf-call-text">CALL OUR CALL CENTER</p>
+              <h4 className="gf-call-number">+1 (800) 634 97 25</h4>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ================= FOOTER ================= */}
+      <footer className="gf-footer-section">
+        <div className="container">
+          <div className="row">
+
+            {/* About */}
+            <div className="col-lg-4 mb-4">
+              <h5 className="gf-footer-heading">About Company</h5>
+              <p className="gf-footer-text">
+                Pellentesque habitant morbi tristique senectus et netus et
+                malesuada fames ac turpis egestas. Vestibulum tortor quam,
+                feugiat vitae, ultricies eget, tempor sit amet, ante.
+              </p>
+
+              <div className="gf-social-icons">
+                <i className="fab fa-whatsapp"></i>
+                <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-dribbble"></i>
+                <i className="fab fa-twitter"></i>
+                <i className="fab fa-behance"></i>
+              </div>
+
+              <h6 className="gf-download-title">
+                Download APP for fast and secure shopping:
+              </h6>
+
+              <div className="gf-app-images">
+                <img src={appstoreImg} alt="App Store" />
+                <img src={playstoreImg} alt="Google Play" />
+              </div>
+            </div>
+
+            {/* Links */}
+            <div className="col-lg-2 col-md-4 mb-4">
+              <h6 className="gf-footer-heading">Links</h6>
+              <ul className="gf-footer-list">
+                <li>GreenGrocery INC</li>
+                <li>About Us</li>
+                <li>Company</li>
+                <li>Careers</li>
+                <li>Brands</li>
+              </ul>
+            </div>
+
+            {/* Campaigns */}
+            <div className="col-lg-2 col-md-4 mb-4">
+              <h6 className="gf-footer-heading">Campaigns</h6>
+              <ul className="gf-footer-list">
+                <li>Campaign of the Week</li>
+                <li>%50 Sales</li>
+                <li>Pre-Sale</li>
+                <li>Bakery</li>
+                <li>Outlet</li>
+              </ul>
+            </div>
+
+            {/* Pages */}
+            <div className="col-lg-2 col-md-4 mb-4">
+              <h6 className="gf-footer-heading">Pages</h6>
+              <ul className="gf-footer-list">
+                <li>Order Tracking</li>
+                <li>Terms & Conditions</li>
+                <li>Privacy Policy</li>
+                <li>Tutorials</li>
+                <li>FAQ</li>
+              </ul>
+            </div>
+
+            {/* Help */}
+            <div className="col-lg-2 col-md-4 mb-4">
+              <h6 className="gf-footer-heading">Help</h6>
+              <ul className="gf-footer-list">
+                <li><i className="fab fa-facebook-messenger me-2"></i>Facebook Chat</li>
+                <li><i className="fab fa-whatsapp me-2"></i>Whatsapp Help</li>
+                <li><i className="fas fa-envelope me-2"></i>E-mail Support</li>
+                <li><i className="fas fa-comment me-2"></i>Contact</li>
+              </ul>
+            </div>
+
+          </div>
+
+          {/* Bottom */}
+          <div className="gf-footer-bottom d-flex justify-content-between align-items-center flex-wrap">
+            <div className="gf-policy-links">
+              PRIVACY POLICY | RETURNS POLICY | FAQ
+            </div>
+
+            <div className="gf-bottom-icons">
+              <i className="fab fa-dribbble"></i>
+              <i className="fab fa-twitter"></i>
+              <i className="fab fa-behance"></i>
+            </div>
+
+            <div className="gf-payment-img">
+              <img src={paymentImg} alt="Payments" />
+            </div>
+          </div>
+
+        </div>
+      </footer>
+
         </>
     )
 }
